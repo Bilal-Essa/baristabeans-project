@@ -22,7 +22,8 @@
     <link rel="stylesheet" type="text/css" href="/css/contact.css" />
 
     <body id="achtergrond" style="background-image: url('/img/foto-koffie.jpg');"> 
-    @if (Route::has('login'))
+
+            @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
@@ -37,26 +38,31 @@
             @endif
 
         <div class="button-menu">
+     
             <ul>
         <li><a href="Home">Home</a></li>
         <li><a href="Shop">Shop</a></li>
         <li><a href="contact">Contact</a></li>
-        <li><a href="#about">test</a></li>
-            </ul>
-        </div>
+        <li><a href="test">test</a></li>
+             </ul>
 
-        <body>
-        
-    <div class="container">
-        <div class="text">
-            <p>Proef de rijke aroma's van kwaliteitskoffie bij Baristabeans. Onze passie voor perfectie begint bij het selecteren van de beste bonen, rechtstreeks vanuit de meest exotische koffieregio's over de hele wereld.</p><br>
-            <p>Bekijk snel ons gehele assortiment!<p>
-            <div class="button-wrapper">
-    <br><a href="\Shop" class="btn fill">Ga naar de shop</a>
-</div>
-        </div>
-        <div class="image">
-            <img src="img/koffie6.png" alt="Mooie Afbeelding">
-        </div>
+    <div class="container-contact">
+    <Div class="text-container">
+	<form action="/submit" name="contact_form" method="post">
+    <h3>Contact formulier</h3>
+		<label for="name">Naam</label>
+		<input name="name" type="text" placeholder="Naam"/>
+		<br>
+		<label for="email">Email</label>
+		<input name="email" type="email" required placeholder="E-mail"/>
+		<br>
+		<label for="message">Bericht</label><br>
+        <textarea name="message" cols="30" rows="10" placeholder="Typ hier uw bericht..." required> </textarea>
+        <div class="button-wrapper">
+    <br><button type="submit" class="btn fill">Verzenden</a>
     </div>
-</body>
+	</form>	
+  </div>
+</div>
+                                
+</html>

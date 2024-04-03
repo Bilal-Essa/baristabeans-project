@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactpaginaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KoffieproductController;
 use App\Http\Controllers\Products;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\testcontactController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\koffieproductencontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ Route::get('/',[ProductController::class, 'index'], function () {
     return view('welcome',);
 });
 
+
+Route::get('/koffieproduct', [KoffieproductController::class,'index'], function(){
+    return view('koffieproduct');
+});
      
 //Mail::to('bilal.essalhi2004@gmail.com')->send(testmail());
 
@@ -37,12 +43,8 @@ Route::get('/',[ProductController::class, 'index'], function () {
 //    return view('contact');
 //
 
-//Route::get('/contactpagina', [contactpaginaController::class, 'showForm'])->name('contact.form');
-//Route::post('/contactpagina', [contactpaginaController::class, 'submitForm'])->name('contact.submit');
-
-Route::get('/contactpagina', [contactpaginaController::class, 'index'], function(){
-    return view('/contactpagina');
-});
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/Shop', [ShopController::class, 'index'], function(){
     return view('/Shop');
@@ -64,6 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';
 

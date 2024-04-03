@@ -42,7 +42,7 @@
             <ul>
         <li><a href="Home">Home</a></li>
         <li><a href="Shop">Shop</a></li>
-        <li><a href="contactpagina">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
         <li><a href="test">test</a></li>
              </ul>
 

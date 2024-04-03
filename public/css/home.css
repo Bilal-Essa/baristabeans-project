@@ -15,40 +15,10 @@ li {
   display: inline;
 }
 
-.button{
-  padding: 15px 20px;
-  margin: 5px;
-  background-color: brown;
-  color: bisque;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.flexbox-container{
-  display: flex;
-  justify-content: center;
-}
-
 #achtergrond{
   background-size: cover;
 }
-.koffiebonen{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: bisque;
-  font-size: larger;
-  }
 
-.foto-koffie{
-  margin-top: 80px;
-  height: 200px;
-
-}
 
 .Bouwproducten{
   display: flex;
