@@ -1,0 +1,219 @@
+.button-menu{
+display: flex;
+background-color: aliceblue;
+width: auto;
+height: 40px;
+}
+ul {
+  list-style-type: none;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+
+/* Importing the Roboto font from Google Fonts. */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+
+/* Set font of all elements to 'Roboto' */
+* {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+/* Remove outline of all elements on focus */
+*:focus {
+	outline: 0;
+}
+
+body {
+	background: #263238;  /* Set background color to #263238*/
+}
+
+h3 {
+	text-align: center;
+  margin-top: 18px;
+}
+
+/* Add styles to 'container' class */
+.container {
+	padding: 12px 24px 24px 24px;
+	margin: 48px 12px;
+	background: #E3F2FD;
+	border-radius: 4px;
+}
+
+/* Add styles to 'label' selector */
+label {
+	font-size: 0.85em;
+	margin-left: 12px;
+}
+
+/* Add styles to 'input' and 'textarea' selectors */
+input[type=text],input[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-left: 25px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/* Add styles to show 'focus' of selector */
+input[type=text]:focus,input[type=email]:focus, textarea:focus {
+	border: 1px solid green;
+}
+
+.text-container{
+  color: wheat;
+}
+
+/* Add styles to the submit button */
+input[type=submit] {
+	background: #64B5F6;
+	margin: 0 auto;
+	outline: 0;
+	color: white;
+	border: 0;
+	padding: 12px 24px;
+	border-radius: 4px;
+	transition: all ease-in-out 0.1s;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+/* Add styles for 'focus' property */
+input[type=submit]:focus {
+	background: #A5D6A7;
+	color: whitesmoke;
+}
+
+/* Style 'hover' property */
+input[type=submit]:hover {
+	background: #2196F3;
+}
+
+/* Align items to center of the 'div' with the class 'center' */
+.center {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Algemene stijl voor de pagina hier begint de home */
+body {
+  font-family: Arial, sans-serif; /* Lettertype van de tekst */
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0; /* Achtergrondkleur van de pagina */
+}
+
+/* Stijl voor de container */
+.container {
+  width: 800px; 
+  height: 350px;
+  margin-top: 100px; /* Centreer de container op de pagina */
+  display: flex; /* Maak een flex-container */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-radius: 12px;
+  border-radius: 8px; /* Afgeronde hoeken van de container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schaduw van de container */
+}
+
+/* Stijl voor de afbeelding home */
+.image {
+  width: 30%;
+  margin-top: 30px;
+}
+
+img {
+  width: 100%; /* Breedte van de afbeelding binnen .image */
+  height: auto; /* Behoud de aspect ratio van de afbeelding */
+  border-radius: 8px 0 0 8px; /* Afgeronde hoeken van de afbeelding (alleen linkerzijde) */
+}
+
+
+/* Stijl voor de tekst */
+.text {
+  flex: 1; /* Laat de tekst de beschikbare ruimte vullen */
+  padding: 20px; /* Binnenste padding van de tekst */
+  border-radius: 0 8px 8px 0; /* Afgeronde hoeken aan de rechterkant */
+}
+
+p{
+  font-size: 16px; /* Lettergrootte van de tekst */
+  line-height: 1.5; /* Regelafstand van de tekst */
+  color:wheat; /* Kleur van de tekst */
+  margin: 0; /* Verwijder standaardmarges van de paragraaf */
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;  
+  letter-spacing: 2px; 
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all .3s ease;
+  
+}
+.outline:hover{
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;  
+}
+
+.fill {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255,255,255,0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease; 
+}
+
+.fill:hover{
+  transform: scale(1.125);  
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+  transition: all .3s ease;    
+}
+
+.container-contact{
+  width: 460px; 
+  height: 710px;
+  margin-top: 100px; /* Centreer de container op de pagina */
+  display: flex; /* Maak een flex-container */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-radius: 12px;
+  border-radius: 8px; /* Afgeronde hoeken van de container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schaduw van de container */
+}
