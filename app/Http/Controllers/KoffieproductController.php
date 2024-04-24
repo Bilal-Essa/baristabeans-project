@@ -16,4 +16,5 @@ class KoffieproductController extends Controller
 
         return view('koffieproduct', ['product' => $product]);
     }
+
 }

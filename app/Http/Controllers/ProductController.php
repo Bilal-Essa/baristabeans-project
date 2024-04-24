@@ -14,7 +14,7 @@ class ProductController extends Controller
         
         $id = $r->get('product_id');
         echo $id;
-        exit;
+      
 
         // Haal alle producten op uit de database
         $products = Product::all();

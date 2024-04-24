@@ -27,8 +27,8 @@ use App\Http\Controllers\koffieproductencontroller;
 
 
 
-Route::get('/', [ProductController::class, 'index']);
-Route::get('/',[ProductController::class, 'index'], function () {
+// Route::get('/', [ShopController::class, 'index']);
+Route::get('/',[ShopController::class, 'index'], function () {
     return view('welcome',);
 });
 
@@ -43,12 +43,15 @@ Route::get('/koffieproduct', [KoffieproductController::class,'index'], function(
 //    return view('contact');
 //
 
+
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
 Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/Shop', [ShopController::class, 'index'], function(){
     return view('/Shop');
 });
+
+Route::post('/toggle_gram', 'ProductController@toggleGram')->name('toggle_gram');
 
 //Route::get('/testcontact', [testcontactController::class, 'show'])->name('testcontact.show');
 //Route::post('/testcontact', [testcontactController::class, 'submit'])->name('testcontact.submit');
@@ -66,7 +69,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 
 require __DIR__.'/auth.php';
 

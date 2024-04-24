@@ -12,6 +12,7 @@ class ShopController extends Controller
     public function index(Request $r)
     {
 
+
     //    exit;
         $products = Product::all();
 
