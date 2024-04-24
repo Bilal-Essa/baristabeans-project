@@ -109,7 +109,7 @@
   }
   
 
-p{
+.enkel-product-wrapper{
 color: white;
 }
 
@@ -152,25 +152,105 @@ color: white;
   transition: all .3s ease;    
 }
 
-.button-gram250{
+
+.button-gram {
   color: aqua;
-  box-shadow: 0 0 0 5px #3d5a49;
-  background-color: #3d5a49 !important;
-  border-radius: 10px;
-  border-color: blue;
+  background-color: #3d5a49 !important;  /* Achtergrondkleur met !important om andere stijlen te overschrijven */
+  border-radius: 20px;  /* Border-radius van 20px */
+  border: 1px solid blue;  /* Border van 1px solide blauw */
+  padding: 10px 20px;  /* Ruimte binnenin de knop */
+  font-family: 'gooper-bold' !important;  /* Lettertype met !important om andere stijlen te overschrijven */
+  font-size: 14px;  /* Tekengrootte van 14px */
+  min-height: var(--swatch-size-medium);  /* Minimale hoogte van de knop */
+  min-width: var(--swatch-size-medium);  /* Minimale breedte van de knop */
+  box-shadow: 0 0 0 5px #3d5a49,  /* Schaduw met 5px */
+              0 0 0 1px #999;  /* Extra schaduw met 1px */
+  display: inline-block;  /* Inline-blok weergave */
+  cursor: pointer;  /* Muisaanwijzer verandert in een handje bij de knop */
 }
 
-.button-gram250{
-border-radius: 20px;
-padding-left: 20px;
-padding-right: 20px;
-font-family: 'gooper-bold' !important;
-font-size: 14px;
-min-height: var(--swatch-size-medium);
-min-width: var(--swatch-size-medium);
-box-shadow: 0 0 0 1px #999;
+.button-gram.selected {
+  background-color: blue;  /* Achtergrondkleur wordt blauw voor geselecteerde knop */
+  color: white;  /* Tekstkleur wordt wit voor geselecteerde knop */
 }
+
 
 .bedrag{
-  color: blue;
+color: rgba(0, 212, 255, 0.9);
+font-size: 30px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+
+input{
+  color: black !important;
+}
+.cart {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.cart-item-info {
+  flex-grow: 1;
+}
+.cart-item-title {
+  font-weight: bold;
+  margin: 0;
+}
+.cart-item-price {
+  color: #666;
+}
+.cart-item-quantity {
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.cart-total {
+  text-align: right;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.color-change-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+

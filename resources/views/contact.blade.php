@@ -12,6 +12,8 @@
         <!-- Fonts -->  
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <!-- Voeg dit toe aan je Laravel-weergave -->
+<script src="{{ asset('js/button-contact.js') }}"></script>
 
         <!-- Styles -->
         <style>
@@ -48,20 +50,28 @@
 
     <div class="container-contact">
     <Div class="text-container">
-	<form action="/submit" name="contact_form" method="post">
+	<form action="{{ route('contact.store') }}" method="POST">
+            <!-- Voeg dit toe aan je Laravel-weergave -->
+<script src="{{ asset('js/button-contact.js') }}"></script>
+           <!-- Voeg dit toe aan je Laravel-weergave -->
+@if(session('success_message'))
+    <div id="success-message" style="display: none;">{{ session('success_message') }}</div>
+@endif
+    @csrf
     <h3>Contact formulier</h3>
 		<label for="name">Naam</label>
-		<input name="name" type="text" placeholder="Naam"/>
+		<input class="tekstveld" name="name" type="text" required placeholder="Naam"/>
 		<br>
 		<label for="email">Email</label>
-		<input name="email" type="email" required placeholder="E-mail"/>
+		<input class="tekstveld" name="email" type="email" required placeholder="E-mail"/>
 		<br>
 		<label for="message">Bericht</label><br>
-        <textarea name="message" cols="30" rows="10" placeholder="Typ hier uw bericht..." required> </textarea>
-        <div class="button-wrapper">
-    <br><button type="submit" class="btn fill">Verzenden</a>
+        <textarea class="tekstveld" name="message" cols="30" rows="10" required placeholder="Typ hier uw bericht..." required> </textarea>
+        <div class="button-wrapper"><br>    
+        <button type="submit" class="btn fill">Verzenden</a>
     </div>
 	</form>	
+
   </div>
 </div>
                                 

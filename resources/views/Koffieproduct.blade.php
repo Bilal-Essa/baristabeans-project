@@ -836,6 +836,8 @@
 
 <body id="achtergrond" style="background-image: url('/img/foto-koffie.jpg');">
 
+<form method="post" action="/addcart">
+
     @if (Route::has('login'))
     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
         @auth
@@ -875,20 +877,46 @@
                     <h1 class="tekst-naam-koffie">{{$product->Product_name }}</h1>
                     <p>{{$product->Product_afkomst}}</p>
                     <p>Kies uw gewenste hoeveelheid:</p><br>
-                    <button class="button-gram250"; onclick="document.getElementById('prijs').innerHTML='€13'">250 Gram</button>
-                    <button class="button-gram250"; onclick="document.getElementById('prijs').innerHTML='€45'">1000 Gram</button>
-                    <p class="bedrag" id="prijs">€{{$product->Product_price}}</p>
+                    <input type="hidden" name="artikel" value="{{$product->product_id }}">
+                    <input type="hidden" id="fld_gewicht" name="gewicht" value="250">
+                    <script>function changequantify(prijs, quantity){
+
+                        document.getElementById('prijs').innerHTML='€' + prijs + ',-';
+                        document.getElementById('fld_gewicht').value = quantity;
+                        
+                    } 
+                    </script>
+                    <label class="button-gram" ; onclick="changequantify('{{$product->Product_price }}', 250)">250 Gram</label>
+                    <label class="button-gram" ; onclick="changequantify('{{$product->productkilo_price }}', 1000)">1000 Gram</label><br>
+                    <p class="bedrag" id="prijs">€{{$product->Product_price}},-</p>
+                    
                 </div>
             </div>
         </div>
         <div class="button-wrapper">
-            <button class="btn fill"><a href="\shop">Voeg toe aan uw winkelmand</a></button>
-        </div>
+                        <button type="submit" class="btn fill">Voeg toe aan uw winkelmand</button>
+                    </div>
         <div class="button-wrapper">
             <button class="btn fill"><a href="\Shop">Ga terug naar de shop</a></button>
         </div>
-   
 
+
+    <div class="cart">
+        <div class="cart-item">
+            <img src="/img/{{$product->product_img}}">
+            <div class="cart-item-info">
+                <h3 class="cart-item-title">PEACEFUL PROTEST</h3>
+                <p class="cart-item-price">$13</p>
+                <p class="cart-item-quantity">Quantity: 2</p>
+            </div>
+        </div>
+
+        <div class="cart-total">
+            <p>Total: 26</p>
+        </div>
+        <button class="checkout-btn">bestellen</button>
+    </div>
+    @csrf
+    </form>
 </body>
-
 </html>

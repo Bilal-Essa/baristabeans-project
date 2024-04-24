@@ -50,9 +50,13 @@
     <div class="container">
         <div class="text">
             <p>Proef de rijke aroma's van kwaliteitskoffie bij Baristabeans. Onze passie voor perfectie begint bij het selecteren van de beste bonen, rechtstreeks vanuit de meest exotische koffieregio's over de hele wereld.</p><br>
-            <p>Bekijk snel ons gehele assortiment!<p>
+            <P>Heeft u vragen of opmerkingen? Ga dan naar onze contactformulier en dan nemen wij zo snel mogelijk contact met u op. </P><br>
+            <p>Of bekijk ons gehele assortiment!<p>
             <div class="button-wrapper">
     <br><a href="\Shop" class="btn fill">Ga naar de shop</a>
+            </div>
+<div class="button-wrapper">
+    <br><a href="\contact" class="btn fill">Contactpagina</a>
 </div>
         </div>
         <div class="image">
