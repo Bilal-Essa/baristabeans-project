@@ -14,6 +14,7 @@ use App\Http\Controllers\ShowController;
 use App\Http\Controllers\testcontactController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\koffieproductencontroller;
+use App\Http\Controllers\WinkelmandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,9 @@ Route::get('/',[ShopController::class, 'index'], function () {
 
 Route::post("/addcart", [CartController::class, 'add']);
 Route::get("/addcart", [CartController::class, 'add']);
+Route::get("/deletecart", [CartController::class, 'delete']);
+
+Route::get("/winkelmand", [WinkelmandController::class, 'index']);
 
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
