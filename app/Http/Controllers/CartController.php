@@ -18,7 +18,7 @@ class CartController extends Controller
             //hier maken we een lege order aan
             $saleorder = new SaleOrder();
             $saleorder->name = '';
-            $saleorder->email = 'Bilal@hotmail.com';
+            $saleorder->email = '';
             $saleorder->save();
             // echo "Order aanmaken {$saleorder->id} c {$order_id} <br>";
             //hier slaan we de order id op in de session voor later gebruik.
@@ -31,21 +31,58 @@ class CartController extends Controller
 
         $productDb = Product::where('product_id', $product['artikel'])->first();
 
-        if ($product['gewicht'] == 250) {
 
-            $prijs = $productDb->Product_price;
-        } else {
-            $prijs = $productDb->productkilo_price;
+
+        $saleorderitem = SaleOrderItem
+                        ::where('product_id', $product['artikel'])
+                        ->where('sale_order_id', $saleorder->id)
+                        ->first();
+      
+        var_dump($saleorderitem);
+
+
+        // Stap 1: is er een order regelen waarbij sale_order_id = $order_id AND product_id = product_id
+        // Stap 2: is er een SaleOrderItem regel gevonden, update quantity = quantity + $product['gewicht'];
+        
+        // een query
+        if($saleorderitem)
+        {
+            $saleorderitem->quantity =  $saleorderitem->quantity  + $product['gewicht'];
+
+            if ($saleorderitem->quantity <= 250) 
+            {
+                $tmpPrijs = $productDb->Product_price;
+                $gramprijs = $tmpPrijs / 250;
+                $prijs = $gramprijs *  $saleorderitem->quantity;
+            } 
+            else 
+            {
+                $tmpPrijs = $productDb->productkilo_price;
+                $gramprijs = $tmpPrijs / 1000;
+                $prijs = $gramprijs *  $saleorderitem->quantity;
+            }
+            $saleorderitem->price =  $prijs;
+
+    
         }
-        print_r($productDb->Product_name);
+        else 
+        {
+            // Nieuw product aan de bestelling toevoegen
 
+            if ($product['gewicht'] == 250) {
 
-        $saleorderitem = new SaleOrderItem();
-        $saleorderitem->sale_order_id = $saleorder->id;
-        $saleorderitem->quantity = $product['gewicht'];
-        $saleorderitem->product_id = $product['artikel'];
-        $saleorderitem->price = $prijs;
-        $saleorderitem->description = $productDb->Product_name;
+                $prijs = $productDb->Product_price;
+            } else {
+                $prijs = $productDb->productkilo_price;
+            }
+
+            $saleorderitem = new SaleOrderItem();
+            $saleorderitem->sale_order_id = $saleorder->id;
+            $saleorderitem->quantity = $product['gewicht'];
+            $saleorderitem->product_id = $product['artikel'];
+            $saleorderitem->price = $prijs;
+            $saleorderitem->description = $productDb->Product_name;
+        }
 
 
         $saleorderitem->save();

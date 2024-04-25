@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\SaleOrderItem;
 use App\Models\SaleOrder;
+use Illuminate\Http\Request;
 
-
-class WinkelmandController extends Controller
+class BesteldController extends Controller
 {
-   public function index()
+    public function index()
    {
       //hier kijken we of session id bestaat met de coalescing operator
       $order_id = $_SESSION['order_id'] ?? null;
@@ -27,14 +26,13 @@ class WinkelmandController extends Controller
       foreach ($saleOrderItems as $saleOrderItem) {
          $totaalbedrag = $totaalbedrag + $saleOrderItem->price;
       }
-
+   //   $_SESSION['order_id'] = null;
       $templateData = [
+         'ordernummer' => $order_id,
          'order' => $saleorder,
          'order_items' => $saleOrderItems,
          'totaal_bedrag' => $totaalbedrag
       ];
-      return view("winkelmand", $templateData);
+      return view("besteld", $templateData);
    }
-
-
 }
