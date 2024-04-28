@@ -10,21 +10,10 @@ class KoffieproductController extends Controller
 {
     public function index(Request $r){
 
-        // $order_id = $request->session()->get('order_id');
-        // if(!$order_id)
-        // {
-        //         // select from sale_order_items where sale_order_id = $order_id
-        //         SaleOrderItem::where)()
-        // }
+        $id = $r->get('product_id'); // Haal de product-ID op uit de request
 
-        
+        $product = Product::where('product_id', $id)->first(); // Zoek het product op basis van de ID
 
-        $id = $r->get('product_id');
-
-        $product = Product::where('product_id', $id)->first();
-        
-
-        return view('koffieproduct', ['product' => $product]);
+        return view('koffieproduct', ['product' => $product]); // Geef het gevonden product door aan de view 'koffieproduct'
     }
-
 }

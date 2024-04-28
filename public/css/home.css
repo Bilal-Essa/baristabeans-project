@@ -27,8 +27,11 @@
   background-color: rgba(85, 85, 85, 0.7); /* Hier is de hover kleur met dezelfde doorzichtigheid */
 }
 
-#achtergrond{
-  background-size: cover;
+    #achtergrond{
+      background-size:cover;
+    }
+.menu ul li a:hover {
+  background-color: rgba(85, 85, 85, 0.7); /* Hier is de hover kleur met dezelfde doorzichtigheid */
 }
 
 .Bouwproducten{

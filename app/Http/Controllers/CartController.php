@@ -20,7 +20,7 @@ class CartController extends Controller
             $saleorder->name = '';
             $saleorder->email = '';
             $saleorder->save();
-            // echo "Order aanmaken {$saleorder->id} c {$order_id} <br>";
+
             //hier slaan we de order id op in de session voor later gebruik.
             $_SESSION['order_id'] = $saleorder->id;
         } else {
@@ -40,11 +40,6 @@ class CartController extends Controller
       
         var_dump($saleorderitem);
 
-
-        // Stap 1: is er een order regelen waarbij sale_order_id = $order_id AND product_id = product_id
-        // Stap 2: is er een SaleOrderItem regel gevonden, update quantity = quantity + $product['gewicht'];
-        
-        // een query
         if($saleorderitem)
         {
             $saleorderitem->quantity =  $saleorderitem->quantity  + $product['gewicht'];

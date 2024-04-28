@@ -9,7 +9,8 @@
 <body>
     <div>
     <php
-if (DB::connection()->getPdo()){
+    #kijken of de databse is geconnect
+    (DB::connection()->getPdo()){
     echo "Succesvol verbonden met de database en de database naam is:" .DB::connection()->getDatabaseName();
 }
 ?>

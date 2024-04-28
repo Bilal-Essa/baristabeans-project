@@ -26,13 +26,14 @@ class BesteldController extends Controller
       foreach ($saleOrderItems as $saleOrderItem) {
          $totaalbedrag = $totaalbedrag + $saleOrderItem->price;
       }
-   //   $_SESSION['order_id'] = null;
-      $templateData = [
-         'ordernummer' => $order_id,
-         'order' => $saleorder,
-         'order_items' => $saleOrderItems,
-         'totaal_bedrag' => $totaalbedrag
-      ];
+   //  $_SESSION['order_id'] = null;
+   $templateData = [
+      'ordernummer' => $order_id, // Het ordernummer wordt toegevoegd aan de template data
+      'order' => $saleorder, // De bestelling zelf wordt toegevoegd aan de template data
+      'order_items' => $saleOrderItems, // De bestelde items worden toegevoegd aan de template data
+      'totaal_bedrag' => $totaalbedrag // Het totaalbedrag van de bestelling wordt toegevoegd aan de template data
+  ];
+  
       return view("besteld", $templateData);
    }
 }

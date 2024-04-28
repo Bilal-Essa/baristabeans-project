@@ -34,6 +34,13 @@
     background-color: rgba(85, 85, 85, 0.7); /* Hier is de hover kleur met dezelfde doorzichtigheid */
 }
 
+.logo {
+  width: 100px;
+  height: 70px;
+  display: inline-block; /* Voeg display:inline-block toe om de grootte van het logo in te stellen */
+  vertical-align: middle; /* Hiermee wordt het logo verticaal gecentreerd in de lijn met tekst */
+  margin-right: 10px; /* Voeg eventueel marge toe om het logo van de andere links te scheiden */
+}
 /* Basisstijlen voor de tabel */
 table {
     width: 100%;

@@ -27,7 +27,12 @@
   background-color: rgba(85, 85, 85, 0.7); /* Hier is de hover kleur met dezelfde doorzichtigheid */
 }
 
-
+    #achtergrond{
+      background-size:cover;
+    }
+.menu ul li a:hover {
+  background-color: rgba(85, 85, 85, 0.7); /* Hier is de hover kleur met dezelfde doorzichtigheid */
+}
 /* Importing the Roboto font from Google Fonts. */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400");
 

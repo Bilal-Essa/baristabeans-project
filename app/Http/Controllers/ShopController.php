@@ -11,25 +11,21 @@ class ShopController extends Controller
 {
     public function index(Request $r)
     {
-
-
-    //    exit;
+        
         $products = Product::all();
 
-
+        // Roep de setMessage methode aan om een bericht in te stellen
         $message = $this->setMessage();
 
+        // Geef de producten en het bericht door aan de view 'Shop'
         return view('Shop', ['products' => $products, 'message' => $message]);
-        
-
     }
 
+    // Een methode om het welkomstbericht in te stellen
     public function setMessage()
     {
-    
-        $message = "Welkom bij onze winkel! Hier zijn onder kan je onze producten vinden";
+        // Stel het welkomstbericht in
+        $message = "Welkom bij onze winkel! Hier kan je onze producten vinden.";
         return $message;
     }
-
-
 }

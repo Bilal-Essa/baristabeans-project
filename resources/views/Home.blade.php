@@ -12,10 +12,9 @@
             <li><a href="Home">Home</a></li>
             <li><a href="Shop">Shop</a></li>
             <li><a href="contact">Contact</a></li>
-            <li><a href="winkelmand">Winkelmand</a></li>
+            <li><a href="winkelmand">Winkelmand</a></li> 
                 </ul>
             </nav>
-        <body>
         
     <div class="container">
         <div class="text">

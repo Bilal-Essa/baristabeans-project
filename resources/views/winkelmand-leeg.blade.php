@@ -20,8 +20,8 @@
                         &nbsp;
                     </div>
              </div>
-        
-    <p>Uw winkelmand is leeg</p>
+    <h1 style="color:bisque;font-size:50px;">Winkelmand</h1><br>
+    <p style="color:bisque;font-size:20px;">Uw winkelwagen is leeg</p><br>
 
     </body>
 </html>
